@@ -18,20 +18,20 @@ for(const link of links){
 
 
 /* Mudar o header da pagina quando der scroll */ 
-const header = document.querySelector("#header")
-const navHeight = header.offsetHeight
+function changeHeaderWhenScroll() {
+  const header = document.querySelector("#header")
+  const navHeight = header.offsetHeight 
 
-window.addEventListener('scroll', function(){
   if (window.scrollY >= navHeight){
     //scroll é maior que a altura do header
     header.classList.add('scroll')
-    
   }else{
     //menor que a altura do header
     header.classList.remove('scroll')
   }
+}
 
-})
+
 const swiper = new Swiper('.swiper', {
   SlidesPerView: 1,
   pagination:{
@@ -45,9 +45,10 @@ const swiper = new Swiper('.swiper', {
 const scrollReveal = ScrollReveal({
   origin:'top',
   distance:'30px',
-  duration:700,
+  duration:500,
   reset:true,
 })
+
 scrollReveal.reveal(
   ` #home .image, #home .text,
   #about .image, #about .text,
@@ -56,5 +57,22 @@ scrollReveal.reveal(
   #testimonials .testimonials,
   #testimonials .testimonials,
   #contact .text, #contact .links
-  
-  `,{interval:10})
+  footer .brand, footer .social
+  `,{interval:5})
+
+/*botão de volta para o top*/
+function backToTop() {
+  const backToTopButton = document.querySelector('.back-to-top')
+
+  if(window.scrollY >= 560) {
+    backToTopButton.classList.add('show')
+  } else { 
+    backToTopButton.classList.remove('show')
+  }
+}
+
+/* When Scroll */
+window.addEventListener('scroll', function () {
+  changeHeaderWhenScroll()
+  backToTop()
+})

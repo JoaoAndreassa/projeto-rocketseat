@@ -402,6 +402,10 @@ nav.show div.icon-close{
 #contact .text p{
   margin-bottom: 2rem;
 }
+#contact .button{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 #contact .button i,#contact ul li i{
   font-size: 1.5rem;
   margin-right: 0.625rem;
@@ -437,10 +441,66 @@ footer i{
 }
 footer .social a{
   margin-right: 2rem;
+  transition: 0.3s;
+  display: inline-block;
+}
+footer .social a:hover{
+  transform: translateY(-8px);
 }
 
 /*==========BACK TO TOP=========*/
 
 .back-to-top{
   background: var(--base-color);
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.5rem;
+  clip-path: circle();
+  line-height: 0;
+  font-size: 1.5rem;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+  transform: translateY(200%);
+
+}
+.back-to-top.show{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* Responsivo */
+
+
+
+/*======= MEDIA QUERIES =========*/
+/* EXTRA LARGE DEVICE 1200 > */
+
+@media () {
+    
+}
+/* LARGE DEVICES: 1023 > */
+
+@media () {
+    
+}
+/* LARGE DEVICES: 992 > */
+
+@media (min-width: 992px) {
+    .title{
+      font-size: 2.2rem;
+    }
+}
+/* MEDIUM DEVICES: 767 > */
+
+@media () {
+    
 }
